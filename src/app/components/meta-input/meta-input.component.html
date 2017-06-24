@@ -1,0 +1,17 @@
+<div [formGroup]="form">
+  <div formGroupName="{{formGroupName}}">
+    <label *ngIf="type === 'textInput'">
+      <span [class.required]="required">{{ label }}</span>
+      <input type="text" name="{{name}}" formControlName="{{metaPath}}">
+    </label>
+    <label *ngIf="type === 'selectInput'">
+      <span [class.required]="required">{{ label }}</span>
+      <select name="{{name}}" formControlName="{{metaPath}}">
+        <option *ngFor="let option of options"
+                [value]="option.value">
+          {{option.key}}
+        </option>
+      </select>
+    </label>
+  </div>
+</div>

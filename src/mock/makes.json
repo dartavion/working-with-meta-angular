@@ -1,0 +1,16 @@
+{
+  "listItems": [
+    {
+      "codeValue": "bmw",
+      "longName": "bmw"
+    },
+    {
+      "codeValue": "chevrolet",
+      "longName": "chevrolet"
+    },
+    {
+      "codeValue": "audi",
+      "longName": "audi"
+    }
+  ]
+}

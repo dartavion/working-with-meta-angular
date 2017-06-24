@@ -1,0 +1,15 @@
+{
+  "models": {
+    "chevrolet": [
+      "impala",
+      "caprice"
+    ],
+    "bmw": [
+      "328xi",
+      "335i",
+      "x5",
+      "x6"
+    ]
+  }
+}
+

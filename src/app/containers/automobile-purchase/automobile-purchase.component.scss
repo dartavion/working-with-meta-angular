@@ -1,0 +1,30 @@
+form {
+  border: 1px solid lightgray;
+  margin: 40px auto;
+  box-shadow: 0 3px 5px rgba(100, 139, 217, .2);
+  border-radius: 3px;
+  padding: 40px;
+  width: 600px;
+}
+
+button {
+  margin: 20px 0 0 0;
+  padding: 20px;
+  box-shadow: 0 3px 5px rgba(100, 139, 217, .2);
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  background-color: rgba(100, 139, 217, .2);
+  font-weight: bold;
+  font-size: 18px;
+  width: 100%;
+}
+
+pre {
+  padding: 10px;
+  background-color: #F4F4F4;
+  border: 1px solid lightgray;
+}
+
+h4 {
+  font-family: Helvetica, sans-serif;
+}

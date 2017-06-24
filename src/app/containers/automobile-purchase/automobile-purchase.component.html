@@ -1,0 +1,51 @@
+<form [formGroup]="form">
+
+  <meta-input
+    [form]="form"
+    [formGroupName]="'user'"
+    [metaPath]="'/transforms/data/names/first'">
+  </meta-input>
+
+  <meta-input
+    [form]="form"
+    [formGroupName]="'user'"
+    [metaPath]="'/transforms/data/names/middle'">
+  </meta-input>
+
+  <meta-input
+    [form]="form"
+    [formGroupName]="'user'"
+    [metaPath]="'/transforms/data/names/last'">
+  </meta-input>
+
+  <meta-input
+    [form]="form"
+    [formGroupName]="'ymm'"
+    [metaPath]="'/transforms/data/automobile/year'">
+  </meta-input>
+
+  <meta-input
+    [form]="form"
+    [formGroupName]="'ymm'"
+    [metaPath]="'/transforms/data/automobile/make'">
+  </meta-input>
+
+  <meta-input
+    [form]="form"
+    [formGroupName]="'ymm'"
+    [metaPath]="'/transforms/data/automobile/model'">
+  </meta-input>
+
+  <button
+    [disabled]="form.invalid"
+    (click)="onSubmit($event)"
+    type="submit">
+    Search
+  </button>
+
+  <h4>Payload Result</h4>
+  <pre>
+    {{payload | json}}
+  </pre>
+</form>
+

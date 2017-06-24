@@ -1,0 +1,42 @@
+{
+  "/transforms/data/names/first": {
+    "readonly": false,
+    "required": true,
+    "longName": "first name",
+    "codeValue": "firstName"
+  },
+  "/transforms/data/names/middle": {
+    "readonly": true,
+    "longName": "middle name",
+    "codeValue": "middleName"
+  },
+  "/transforms/data/names/last": {
+    "readonly": false,
+    "required": true,
+    "longName": "last name",
+    "codeValue": "lastName"
+  },
+  "/transforms/data/automobile/year": {
+    "readonly": false,
+    "longName": "year",
+    "codeList": {
+      "url": "mock/years.json"
+    }
+  },
+  "/transforms/data/automobile/make": {
+    "readonly": false,
+    "longName": "make",
+    "codeList": {
+      "url": "mock/makes.json"
+    }
+  },
+  "/transforms/data/automobile/model": {
+    "readonly": false,
+    "longName": "model",
+    "codeList": {
+      "url": "mock/bmw.json"
+    }
+  }
+}
+
+
