@@ -2,11 +2,11 @@
   <div formGroupName="{{formGroupName}}">
     <label *ngIf="type === 'textInput'">
       <span [class.required]="required">{{ label }}</span>
-      <input type="text" name="{{name}}" formControlName="{{metaPath}}">
+      <input type="text" name="{{metaPath}}" formControlName="{{metaPath}}">
     </label>
     <label *ngIf="type === 'selectInput'">
       <span [class.required]="required">{{ label }}</span>
-      <select name="{{name}}" formControlName="{{metaPath}}">
+      <select name="{{metaPath}}" formControlName="{{metaPath}}">
         <option *ngFor="let option of options"
                 [value]="option.value">
           {{option.key}}
