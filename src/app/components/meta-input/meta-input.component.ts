@@ -12,7 +12,7 @@ export class MetaInputComponent implements OnInit {
   @Input() metaPath: string;
   @Input() name: string;
   @Input() form: FormGroup;
-  @Input() formGroupName: FormGroupName;
+  @Input() formGroupName: string;
 
   public type: string;
   public required: boolean;

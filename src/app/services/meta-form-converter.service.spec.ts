@@ -2,11 +2,19 @@
 
 import { TestBed, async, inject } from '@angular/core/testing';
 import { MetaFormConverterService } from './meta-form-converter.service';
+import { MetaHttpService } from './meta-http.service';
+import { HttpModule } from '@angular/http';
 
 describe('MetaFormConverterService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [MetaFormConverterService]
+      imports: [
+        HttpModule
+      ],
+      providers: [
+        MetaFormConverterService,
+        MetaHttpService
+      ]
     });
   });
 
