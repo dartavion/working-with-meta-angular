@@ -1,8 +1,6 @@
 import { WorkingWithMetaAngularPage } from './app.po';
 import { by } from 'protractor';
-function hasClass( target, className ) {
-  return new RegExp('(\\s|^)' + className + '(\\s|$)').test(target.className);
-}
+
 describe('working-with-meta-angular App', () => {
   let page: WorkingWithMetaAngularPage;
 
