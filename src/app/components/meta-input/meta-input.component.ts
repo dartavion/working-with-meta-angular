@@ -1,8 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { FormGroup, FormGroupName, Validators } from '@angular/forms';
+import { FormGroup, Validators } from '@angular/forms';
 import { MetaFormConverterService } from '../../services/meta-form-converter.service';
 import { MetaHttpService } from '../../services/meta-http.service';
-import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
