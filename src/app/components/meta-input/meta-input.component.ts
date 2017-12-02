@@ -43,7 +43,7 @@ export class MetaInputComponent implements OnInit, OnDestroy {
       this.applyFormProperties(metaInput.input);
 
       metaInput.codeList.subscribe((list: any) => {
-        this.options = this.metaFormConverter.convertCodeList(list.listItems);
+        this.options = MetaFormConverterService.convertCodeList(list.listItems);
       });
     } else {
       this.applyFormProperties(metaInput);

@@ -9,6 +9,40 @@ export class MetaFormConverterService {
 
   meta: any;
 
+  static getTextInput(data: any) {
+    return new TextInput({
+      key: data.codeValue || '',
+      label: data.longName || '',
+      required: data.required || false,
+      disabled: data.readonly || false,
+      controlType: 'textInput'
+    });
+  }
+
+  static getSelectInput(data: any) {
+    return new SelectInput({
+      key: data.codeValue || '',
+      label: data.longName || '',
+      required: data.required || false,
+      disabled: data.readonly || false,
+      controlType: 'selectInput',
+      options: []
+    });
+  }
+
+  static convertCodeList(codeList: any) {
+    return codeList.map((data: any) => {
+      return {
+        key: data.longName,
+        value: data.codeValue
+      };
+    });
+  }
+
+  static isObject(item) {
+    return (item && typeof item === 'object' && !Array.isArray(item) && item !== null);
+  }
+
   constructor(private metaHttpService: MetaHttpService) { }
 
   getMetaDataObject(metaPath: string, meta: any) {
@@ -22,11 +56,11 @@ export class MetaFormConverterService {
 
     if (data.hasOwnProperty('codeList')) {
       input = {
-        input: this.getSelectInput(data),
+        input: MetaFormConverterService.getSelectInput(data),
         codeList: this.getCodeList(data)
       };
     } else {
-      input = this.getTextInput(data);
+      input = MetaFormConverterService.getTextInput(data);
     }
     return input;
   }
@@ -71,36 +105,6 @@ export class MetaFormConverterService {
     return payload;
   }
 
-  getTextInput(data: any) {
-    return new TextInput({
-      key: data.codeValue || '',
-      label: data.longName || '',
-      required: data.required || false,
-      disabled: data.readonly || false,
-      controlType: 'textInput'
-    });
-  }
-
-  getSelectInput(data: any) {
-    return new SelectInput({
-      key: data.codeValue || '',
-      label: data.longName || '',
-      required: data.required || false,
-      disabled: data.readonly || false,
-      controlType: 'selectInput',
-      options: []
-    });
-  }
-
-  convertCodeList(codeList: any) {
-    return codeList.map((data: any) => {
-      return {
-        key: data.longName,
-        value: data.codeValue
-      };
-    });
-  }
-
   // https://gist.github.com/penguinboy/762197
   flatten(object: any, separator = '.'): any {
     const isValidObject = (value): boolean => {
@@ -121,10 +125,12 @@ export class MetaFormConverterService {
 
   // found on the internet as well
   mergeDeep(target, source) {
-    if (this.isObject(target) && this.isObject(source)) {
+    if (MetaFormConverterService.isObject(target) && MetaFormConverterService.isObject(source)) {
       for (const key in source) {
-        if (this.isObject(source[key])) {
-          if (!target[key]) Object.assign(target, { [key]: {} });
+        if (MetaFormConverterService.isObject(source[key])) {
+          if (!target[key]) {
+            Object.assign(target, { [key]: {} });
+          }
           this.mergeDeep(target[key], source[key]);
         } else {
           Object.assign(target, { [key]: source[key] });
@@ -133,9 +139,4 @@ export class MetaFormConverterService {
     }
     return target;
   }
-
-  isObject(item) {
-    return (item && typeof item === 'object' && !Array.isArray(item) && item !== null);
-  }
-
 }

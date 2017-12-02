@@ -10,6 +10,7 @@ import { MetaHttpService } from '../../services/meta-http.service';
 import { MetaInputComponent } from '../../components/meta-input/meta-input.component';
 import { HttpModule } from '@angular/http';
 import { MetaFormConfigService } from '../../services/meta-form-config.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('AutomobilePurchaseComponent', () => {
   let component: AutomobilePurchaseComponent;
@@ -21,7 +22,7 @@ describe('AutomobilePurchaseComponent', () => {
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpModule
+        HttpClientTestingModule
       ],
       providers: [
         FormBuilder,

@@ -10,6 +10,7 @@ import { AutomobilePurchaseComponent } from './containers/automobile-purchase/au
 import { MetaHttpService } from './services/meta-http.service';
 import { MetaFormConverterService } from './services/meta-form-converter.service';
 import { MetaFormConfigService } from './services/meta-form-config.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { MetaFormConfigService } from './services/meta-form-config.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
   exports: [

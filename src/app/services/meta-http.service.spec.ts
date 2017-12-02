@@ -2,13 +2,13 @@
 
 import { TestBed, async, inject } from '@angular/core/testing';
 import { MetaHttpService } from './meta-http.service';
-import { HttpModule } from '@angular/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('MetaHttpService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        HttpModule
+        HttpClientTestingModule
       ],
       providers: [
         MetaHttpService
