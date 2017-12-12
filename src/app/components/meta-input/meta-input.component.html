@@ -5,6 +5,7 @@
       <span [class.required]="required">{{ label }}</span>
       <input type="text" name="{{metaPath}}" formControlName="{{metaPath}}">
     </label>
+    <div></div>
     <label *ngIf="type === 'selectInput'">
       <span [class.required]="required">{{ label }}</span>
       <select name="{{metaPath}}" formControlName="{{metaPath}}">
