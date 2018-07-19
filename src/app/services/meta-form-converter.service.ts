@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { TextInput } from '../meta/text-input';
 import { SelectInput } from '../meta/select-input';
 import { MetaHttpService } from './meta-http.service';
-declare const Buffer;
+import { Buffer } from 'buffer';
+
 
 @Injectable()
 export class MetaFormConverterService {
